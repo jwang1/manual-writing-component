@@ -18,6 +18,8 @@ export class AppComponent {
 
   btnClickedTimes: number = 0;
 
+  userName = '';
+
   useEventTargetValue = '';
   twoWayBinding = 'Please input some text.';
 
@@ -38,4 +40,7 @@ export class AppComponent {
     this.useEventTargetValue = (<HTMLInputElement>event.target).value;
   }
 
+  onClearUserName() {
+    this.userName = '';
+  }
 }

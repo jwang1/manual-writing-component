@@ -101,6 +101,15 @@
 <hr/>
 
 
+<label>Exercise 2: data binding</label>
+
+<input type="text" class="form-control"
+  [(ngModel)]="userName">
+
+<!-- the beauty of using expression inside the property-binding -->
+<button [disabled]="userName.length <= 0" (click)="onClearUserName()">Clear User Name</button>
+
+
 <app-messages></app-messages>
 
 
