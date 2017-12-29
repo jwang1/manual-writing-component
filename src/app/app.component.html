@@ -1,12 +1,53 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+
+<!-- Great blog on ngx-bootstrap
+  https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/
+-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+        <img src="assets/img/ngx-bootstrap.svg" class="logo" alt="ngx-bootstrap">
+      </a>
+      <span class="navbar-brand"> Angular 5 and Bootstrap </span>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">
+        Link <span class="sr-only">(current)</span>
+      </a></li>
+
+      <li><a href="#">Link</a></li>
+
+      <li class="dropdown" dropdown> <!-- {1} -->
+        <a dropdownToggle role="button"> <!-- {2} -->
+          Dropdown <span class="caret"></span></a>
+
+        <ul *dropdownMenu class="dropdown-menu"> <!-- {3} -->
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another Action</a></li>
+          <li><a href="#">Somthing Else</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separate Link</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">One More Separate Link</a></li>
+        </ul>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
 </div>
 
-<app-warn-message></app-warn-message>
 
-<app-error-message></app-error-message>
+<app-messages></app-messages>
+
 
 

@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { WarnMessageComponent } from './warn-message/warn-message.component';
 import { ErrorMessageComponent } from './error-message/error-message.component';
+import { MessagesComponent } from './messages/messages.component';
+
+import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
 
 
 import { AppComponent } from './app.component';
@@ -12,10 +15,12 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     WarnMessageComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    MessagesComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppBootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
