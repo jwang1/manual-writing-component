@@ -73,6 +73,34 @@
 <!-- add horizontal separator -->
 <hr/>
 
+
+<!-- string interplotation, property binding, event binding, two-way binding-->
+<p>{{stringBinding}}</p>
+
+
+<p [innerText]="propertyBinding"></p>
+
+<button (click)="onClick()">demo event binding</button>
+<p>{{ updatedByClick }}</p>
+
+
+<!-- the following is NOT 2-way binding, had to use $event to do the trick to get the template's data -->
+<label>type text below, and check the text using $event variable to get data binding.</label>
+<input type="tex" class="form-control"
+   (input)="onInput($event)">
+<p>{{ useEventTargetValue }}</p>
+
+
+<!-- now 2-way binding -->
+<p>2-way binding, need to import FormsModel in AppModule class</p>
+<input type="text" class="form-control"
+   [(ngModel)]="twoWayBinding">
+<p>{{ twoWayBinding }}</p>
+
+
+<hr/>
+
+
 <app-messages></app-messages>
 
 

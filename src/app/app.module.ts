@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { WarnMessageComponent } from './warn-message/warn-message.component';
 import { ErrorMessageComponent } from './error-message/error-message.component';
@@ -20,6 +21,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+
+    // own module defined to contain/manage ngx-bootstrap
     AppBootstrapModule
   ],
   providers: [],

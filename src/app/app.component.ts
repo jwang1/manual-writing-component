@@ -1,4 +1,5 @@
 import {Component, TemplateRef} from '@angular/core';
+
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 
 @Component({
@@ -9,7 +10,16 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 export class AppComponent {
   title = 'Maximilian\'s 1st exercise, components, module, template written manually!';
 
+  stringBinding  = 'string binding';
+  propertyBinding  = 'property binding';
+
   public modalRef: BsModalRef;
+  updatedByClick: string = '';
+
+  btnClickedTimes: number = 0;
+
+  useEventTargetValue = '';
+  twoWayBinding = 'Please input some text.';
 
   // Angular Injection
   constructor(private modalService: BsModalService) {
@@ -17,6 +27,15 @@ export class AppComponent {
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+  }
+
+  onClick() {
+    this.btnClickedTimes++;
+    this.updatedByClick = 'button is clicked: ' + this.btnClickedTimes;
+  }
+
+  onInput(event: Event) {
+    this.useEventTargetValue = (<HTMLInputElement>event.target).value;
   }
 
 }
