@@ -46,6 +46,32 @@
   </h1>
 </div>
 
+<button type="button" class="btn btn-primary"
+  tooltip="Tooltip for this button">Hover on me.</button>
+
+<button type="button" class="btn btn-info"
+   (click)="openModal(template)">Create Modal</button>
+
+<!-- notice the #template is used in the above,  defines a local variable to be used in method -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title" pull-left>Modal</h4>
+    <button type="button" class="close pull-right"
+        aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+
+<br />
+<br />
+<br />
+
+<!-- add horizontal separator -->
+<hr/>
 
 <app-messages></app-messages>
 

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, TemplateRef} from '@angular/core';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Maximilian Schwarzmuller 1st exercise, write component by hand!';
+  title = 'Maximilian\'s 1st exercise, components, module, template written manually!';
+
+  public modalRef: BsModalRef;
+
+  // Angular Injection
+  constructor(private modalService: BsModalService) {
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
 }
