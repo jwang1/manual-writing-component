@@ -1,6 +1,12 @@
 
-<app-warn-message></app-warn-message>
+<!-- note the local variable #warnMsg ;  note, when it's used,
+      here it's actually the Angular Component WarnMessageComponent -->
+<div [ngStyle]="{ backgroundColor: backgroundColor(warnMsg) }" [ngClass]="styleClass">
+  <app-warn-message #warnMsg></app-warn-message>
+</div>
 
 <br />
 
-<app-error-message></app-error-message>
+<div [ngStyle]="{ 'background-color': backgroundColor(errorMsg) }" [ngClass]="styleClass">
+  <app-error-message #errorMsg></app-error-message>
+</div>

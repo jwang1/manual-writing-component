@@ -14,4 +14,8 @@ export class ErrorMessageComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  toString(): string {
+    return 'ErrorMessageComponent';
+  }
 }

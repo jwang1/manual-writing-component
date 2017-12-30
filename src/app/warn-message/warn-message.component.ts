@@ -17,4 +17,8 @@ export class WarnMessageComponent implements OnInit {
     this.style = 'warn';
   }
 
+  toString(): string {
+    return 'WarnMessageComponent';
+  }
+
 }
