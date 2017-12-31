@@ -1,0 +1,9 @@
+
+<button (click)="toggleSecret()">Display Details</button>
+<p *ngIf="isDisplay">Secret password = tuna</p>
+
+<br />
+<hr />
+<br />
+
+<app-click-logs *ngFor="let log of logs; let clickCnt = index" clicCnt="clickCnt" log="log"></app-click-logs>
