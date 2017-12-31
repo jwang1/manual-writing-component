@@ -15,9 +15,7 @@ export class PracticeDirectivesComponent {
   toggleSecret(): void {
     this.clickCnt++;
 
-    ClickLogsComponent.i++;
     const lg = new ClickLogsComponent();
-    lg.setClicks(this.clickCnt);
     this.logs.push(lg);
 
     this.isDisplay = this.clickCnt % 2 === 1;

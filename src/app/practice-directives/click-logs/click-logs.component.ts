@@ -6,9 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./click-logs.component.css']
 })
 export class ClickLogsComponent implements OnInit {
-  public static i = 0;
+  // Make a static field to record number of ClickLogsComponent created
+  public static nbrClickLogsComponentsCreated = 0;
 
-  public clicks = 0;
+  // This member data records current ClickLogsComponent object's order
+  public nthClickLogsComponent = 0;
 
   @Input('clickCnt')
   public clickCnt: number;
@@ -19,22 +21,21 @@ export class ClickLogsComponent implements OnInit {
   }
 
   bgColor(): string {
-    // return this.clickCnt >= 5 ? 'blue' : 'white';
-    // return ClickLogsComponent.i >= 5 ? 'blue' : 'white';
-    return this.clicks >= 5 ? 'blue' : 'white';
+    return this.nthClickLogsComponent >= 5 ? 'blue' : 'white';
   }
 
   showMoreThanFiveClass(): boolean {
-    // return this.clickCnt >= 5;
-    // return ClickLogsComponent.i >= 5;
-    return this.clicks >= 5;
+    return this.nthClickLogsComponent >= 5;
   }
 
   public ngOnInit() {
     this.log = new Date().toString();
+    ClickLogsComponent.nbrClickLogsComponentsCreated++;
+    this.nthClickLogsComponent = ClickLogsComponent.nbrClickLogsComponentsCreated;
   }
 
   setClicks(clickCnt: number) {
-    this.clicks = this.clickCnt;
+    this.nthClickLogsComponent = this.clickCnt;
   }
+
 }
