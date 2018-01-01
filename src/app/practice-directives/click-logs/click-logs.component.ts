@@ -21,7 +21,7 @@ export class ClickLogsComponent implements OnInit {
   }
 
   bgColor(): string {
-    return this.nthClickLogsComponent >= 5 ? 'blue' : 'white';
+    return this.nthClickLogsComponent >= 5 ? 'blue' : 'transparent';
   }
 
   showMoreThanFiveClass(): boolean {
@@ -32,10 +32,6 @@ export class ClickLogsComponent implements OnInit {
     this.log = new Date().toString();
     ClickLogsComponent.nbrClickLogsComponentsCreated++;
     this.nthClickLogsComponent = ClickLogsComponent.nbrClickLogsComponentsCreated;
-  }
-
-  setClicks(clickCnt: number) {
-    this.nthClickLogsComponent = this.clickCnt;
   }
 
 }

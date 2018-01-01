@@ -6,4 +6,11 @@
 <hr />
 <br />
 
-<app-click-logs *ngFor="let log of logs; let i = index"></app-click-logs>
+<!-- there may be some issues in MessagesComponent, the following,  ngStyle was NOT applied when i >=4 -->
+<!--
+<app-click-logs *ngFor="let log of logs; let i = index"
+                [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+                [ngClass]="{moreThanFive: i >= 4}"></app-click-logs>
+-->
+
+<app-click-logs *ngFor="let log of logs"></app-click-logs>
